@@ -11,6 +11,11 @@
   </head>
 
   <body>
+    <% if current_user.signed_in? %>
+      <div><%= current_user.email %></div>
+    <% else %>
+      <%= render "sign_in_form" %>
+    <% end %>
     <%= yield %>
   </body>
 </html>
